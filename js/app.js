@@ -13,10 +13,43 @@ introForm.addEventListener('submit', (e) => {
   wrapper.style.opacity = 1;
 
   showNames();
+
+  const localName = playerName.toLowerCase();
+
+  if (localStorage.getItem('playerName') === null) {
+    localStorage.setItem('playerName', localName);
+  } else if (localStorage.getItem('playerName') === localName) {
+    console.log(localName);
+  } else {
+    localStorage.setItem('playerName', localName);
+    resetScores();
+  }
 });
 
-let playerScore = 0;
-let computerScore = 0;
+let playerScore;
+let computerScore;
+
+if (localStorage.getItem('currentPlayerScore') === null) {
+  playerScore = 0;
+  computerScore = 0;
+} else {
+  playerScore = localStorage.getItem('currentPlayerScore');
+  computerScore = localStorage.getItem('currentComputerScore');
+}
+
+function resetScores() {
+  localStorage.removeItem('currentPlayerScore');
+  localStorage.removeItem('currentComputerScore');
+
+  playerScore = 0;
+  computerScore = 0;
+
+  updateScores();
+}
+
+const resetBtn = document
+  .querySelector('.reset-score-btn')
+  .addEventListener('click', resetScores);
 
 const playerScoreDiv = document.querySelector('.player-score');
 const computerScoreNumber = document.querySelector('.computer-score-number');
@@ -107,4 +140,7 @@ function updateScores() {
 
   playerScoreNumber.textContent = `${playerScore}`;
   computerScoreNumber.textContent = `${computerScore}`;
+
+  localStorage.setItem('currentPlayerScore', playerScore);
+  localStorage.setItem('currentComputerScore', computerScore);
 }

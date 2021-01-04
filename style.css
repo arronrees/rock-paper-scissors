@@ -15,6 +15,8 @@ body {
 }
 
 .intro {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,8 +24,7 @@ body {
   position: absolute;
   background: rgb(37, 40, 43);
   z-index: 10;
-  width: 100vw;
-  height: 100vh;
+
   transition: 500ms;
   opacity: 1;
 }
@@ -43,6 +44,12 @@ body {
 .intro-btn {
   margin-top: 2rem;
   width: 25rem;
+}
+
+.rps {
+  padding-bottom: 2rem;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
 }
 
 .wrapper {
@@ -135,7 +142,7 @@ body {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1100px) {
   .scores,
   .boxes,
   .buttons {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./js/app.js"></script>
+</head>
+
+<body>
+
+  <form class="intro">
+    <div class="name-input">
+      <label for="name">Name: </label>
+      <input class="name" id="name" type="text">
+    </div>
+    <button type="submit" class="btn intro-btn">Play</button>
+  </form>
+
+  <div class="wrapper">
+    <div class="scores">
+      <div class="player-score">
+
+      </div>
+      <div class="computer-score">
+        Computer: <span class="computer-score-number"></span>
+      </div>
+    </div>
+
+    <div class="boxes">
+      <div class="player-box">
+
+      </div>
+
+      <div class="timer-box">
+
+      </div>
+
+      <div class="computer-box">
+
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button data-hand="rock" class="play-btn btn rock-btn">Rock</button>
+      <button data-hand="paper" class="play-btn btn paper-btn">Paper</button>
+      <button data-hand="scissors" class="play-btn btn scissors-btn">Scissors</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

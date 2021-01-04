@@ -19,7 +19,7 @@ introForm.addEventListener('submit', (e) => {
   if (localStorage.getItem('playerName') === null) {
     localStorage.setItem('playerName', localName);
   } else if (localStorage.getItem('playerName') === localName) {
-    console.log(localName);
+    console.log(`Welcome back, good luck!`);
   } else {
     localStorage.setItem('playerName', localName);
     resetScores();
